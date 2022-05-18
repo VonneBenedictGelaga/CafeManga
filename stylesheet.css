@@ -1,0 +1,68 @@
+body{
+    font-family: 'Crete Round', serif !important;
+    background-color: #BB6B24 !important;
+}
+
+
+/* NAV BAR CSS */
+.navbar{
+    background-color: #6A2B05;
+}
+
+.form-control{
+    background-color: #F99134 !important;
+    color: #3E1404  !important;
+    border: 1px solid #8C4C17 !important;
+    border-radius: 2rem !important;
+    
+}
+.form-control:focus,
+.form-control:active{
+    box-shadow:none !important;
+    outline:0px !important;
+}
+
+#Search::-webkit-search-cancel-button{
+    -webkit-appearance: none;
+}
+
+.img-logo{
+    margin: 0 1rem;
+}
+
+.nav-btn{
+   text-align: center ;
+}
+.nav-item{
+    margin: 0 0.5rem;
+}
+
+.nav-link{
+    border-radius: 1rem;
+    transition: none !important;
+    background-color: #3E1404;
+    color:#F99134 !important;
+    width: 8rem !important;
+    padding: 0.3rem  1rem !important;
+}
+
+.btn{
+    padding: 0 0.3rem !important;
+}
+
+
+.user-logo{
+    color:#F99134;
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+
+.navbar-brand{
+    font-size: 2rem !important;
+    color:#F99134 !important;
+    font-style: italic;
+    text-shadow: 3px 4px 0px #000000;
+    font-weight: 400;
+}
+
+/* NAV BAR CSS END */
