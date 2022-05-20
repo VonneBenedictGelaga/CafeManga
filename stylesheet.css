@@ -4,9 +4,10 @@ body{
 }
 
 
-/* NAV BAR CSS */
+/* NAV BAR CSS*********************************** */
 .navbar{
     background-color: #6A2B05;
+    outline: black solid 0.1rem;
 }
 
 .form-control{
@@ -14,16 +15,12 @@ body{
     color: #3E1404  !important;
     border: 1px solid #8C4C17 !important;
     border-radius: 2rem !important;
-    
 }
+    
 .form-control:focus,
 .form-control:active{
     box-shadow:none !important;
     outline:0px !important;
-}
-
-#Search::-webkit-search-cancel-button{
-    -webkit-appearance: none;
 }
 
 .img-logo{
@@ -46,15 +43,12 @@ body{
     padding: 0.3rem  1rem !important;
 }
 
-.btn{
-    padding: 0 0.3rem !important;
-}
-
 
 .user-logo{
     color:#F99134;
     font-size: 2rem;
     margin-right: 1rem;
+    cursor: pointer;
 }
 
 .navbar-brand{
@@ -65,4 +59,76 @@ body{
     font-weight: 400;
 }
 
+
+@media only screen and (max-width: 1200px){
+    .nav-item{
+        margin: 0.5rem 0rem;
+    }
+    .navbar-nav{
+        flex-direction: 0 !important;
+        align-items: center;
+    }
+    .search1{
+        margin: 0 2rem;
+    }
+}
+
+
+
+
 /* NAV BAR CSS END */
+
+
+/* Carouse***********************************l */
+
+.big-area{
+    background-color: #6A2B05;
+    padding-top: 3rem;
+}
+
+/* .carousel-inner{
+    overflow-y: hidden;
+} */
+
+
+
+.carousel-caption{
+    color: white;
+    background-color: #3E1404;
+}
+
+
+/* End of carousel */
+
+
+
+.manga-area{
+    margin-top: 5rem;
+}
+
+.manga{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.manga > img{
+    max-height: 20rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    box-shadow: 0.5rem 0.5rem #3E1404;
+}
+
+.manga > img:hover{
+    box-shadow: 0.5rem 0.5rem #F99134;
+    
+    transition: box-shadow  0.5s;
+}
+
+
+.manga > h5{
+    color: white;
+    background-color: black;
+
+    margin-top: 1rem;
+
+    border-radius: 0.5rem ;
+}
