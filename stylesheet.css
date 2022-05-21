@@ -132,3 +132,92 @@ body{
 
     border-radius: 0.5rem ;
 }
+
+
+
+/* button */
+.back-to-top {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    border-radius: 100%;
+    background: #7ac9f9;
+    padding: 0.5rem;
+    border: none;
+    cursor: pointer;
+    opacity: 100%;
+    transition: opacity 0.5s;
+}
+
+.hidden {
+    opacity: 0%;
+  }
+
+.back-to-top-icon {
+    width: 1rem;
+    height: 1rem;
+    color: #7ac9f9;
+}
+
+.back-to-top:hover {
+    opacity: 60%;
+}
+
+
+/* MANGA READER AREA----------------------------------------- */
+
+.manga-nav{
+    justify-content: space-between;
+    display: flex;
+    padding: 0rem 5rem;
+}
+
+
+
+.icon-nav{
+    color: #F99134 !important;
+}
+
+.text-manga-nav{
+    text-decoration: none;
+    color: #F99134;
+    padding: 1rem;
+}
+
+.text-manga-nav:hover{
+    color: #3E1404;
+}
+
+
+.manga-title-area{
+    align-items: center;
+    text-align: center;
+}
+.manga-title{
+    margin-bottom: 0rem;
+    font-size: 4rem;
+    color: #F99134;
+}
+
+.manga-chapter{
+    color:  #3E1404;
+    font-weight: bold;
+}
+
+.manga-container{
+    background-color: #3E1404;
+    margin: 1rem 2rem;
+    align-items: center;
+    border-radius: 2rem;
+    padding: 2rem
+}
+
+.manga-img{
+    width: 80%;
+
+    margin: 1rem 0rem;
+}
+
+.footer{
+    padding: 5rem;
+}
