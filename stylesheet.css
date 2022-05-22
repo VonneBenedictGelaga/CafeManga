@@ -223,11 +223,49 @@ body{
 }
 
 .manga-img{
-    width: 80%;
-
+    width: 70%;
     margin: 1rem 0rem;
 }
 
 .footer{
     padding: 5rem;
 }
+
+
+
+ /* MANGA INFO AREA------------------------------ */
+
+
+.manga-cover-area{
+    align-content: center;
+    justify-content: center;
+}
+
+ .manga-cover{
+     display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 70%;
+    border-radius: 2rem;
+    box-shadow: 0.5rem 0.5rem #3E1404;
+ }
+
+.text-info{
+    padding-right: 5rem;
+}
+
+ .manga-info-p{
+     color: #8C4C17 !important;
+    background-color: #F99134;
+    padding: 1rem;
+    border-radius: 1rem;
+ }
+ 
+ .col-md-12{
+    margin-bottom: 3rem;
+ }
+
+ .manga-title{
+    padding: 1rem 0rem;
+ }
