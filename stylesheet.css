@@ -237,29 +237,24 @@ body{
 
 
 .manga-cover-area{
+    display: flex;
     align-content: center;
     justify-content: center;
 }
 
  .manga-cover{
-     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
     width: 70%;
     border-radius: 2rem;
     box-shadow: 0.5rem 0.5rem #3E1404;
  }
 
-.text-info{
-    padding-right: 5rem;
-}
 
  .manga-info-p{
-     color: #8C4C17 !important;
+    color: #8C4C17 !important;
     background-color: #F99134;
     padding: 1rem;
     border-radius: 1rem;
+    margin-right: 3rem;
  }
  
  .col-md-12{
@@ -269,3 +264,83 @@ body{
  .manga-title{
     padding: 1rem 0rem;
  }
+
+.cat-spec{
+    display: inline-block;
+    background-color: #3E1404;
+    border-radius: 0.5rem;
+    padding: 0.3rem;
+}
+
+
+.cat-title{
+    color: #F99134;
+}
+
+.cat-spec-text{
+    text-decoration: none;
+    color: #BB6B24;
+}
+
+.cat-spec-text:hover{
+    text-decoration: none;
+    color: #BB6B24;
+}
+
+
+
+
+
+ .chapter-list-area{
+     background-color: #3E1404;
+     padding: 2rem 0.5rem;
+     border-radius: 0.5rem;
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 80%;
+ }
+
+ .chapter-title{
+     margin-left: 2rem;
+     color: #F99134;
+ }
+
+ .chapter-line{
+     background-color: #8C4C17;
+     padding: 0.5rem 2rem;
+     margin: 0.5rem 0rem;
+ }
+
+ .chapter-num{
+     text-decoration: none;
+     color: #F99134;
+ }
+ .chapter-num:hover{
+    color: #3E1404;
+}
+
+.list-area{
+    overflow-y: scroll;
+    height: 20rem;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #6A2B05;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #F99134;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #8C4C17;
+  }
