@@ -1,6 +1,6 @@
 <?php
 
-$connect = mysqli_connect('localhost', 'root', '', 'manga');
+$connect = mysqli_connect('localhost', 'root', '', 'mangaecafe_login');
 
 if (!$connect) 
 {
