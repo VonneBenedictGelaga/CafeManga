@@ -109,13 +109,13 @@ if (!$connect)
                     echo '<p>The query found ' . mysqli_num_rows($result) . ' rows:</p>';
 
                     while ($record = mysqli_fetch_assoc($result)){
-                        echo '<div class="col-lg-3 col-md-4 col-sm-6 manga">
-                                <img src="'.$record['cover'].'"alt="'.$record['title'].'-cover">
-                                <h5>'.$record['title'].'</h5>
+                        echo '<div class="col-lg-3 col-md-4 col-sm-6 manga" href="mangainfo.php?varname='.$record['manga_id'].'">
+                                    <img src="'.$record['cover'].'"alt="'.$record['title'].'-cover">
+                                     <a href="mangainfo.php?varname='.$record['manga_id'].'"><h5>'.$record['title'].'</h5></a>
                             </div>';
                     }
 
-                    
+
 
                     ?>        
 
