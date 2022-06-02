@@ -29,7 +29,7 @@ if (!$connect)
         <nav class="navbar navbar-expand-xl navbar-light ">
             <div class="container-fluid">
                 <img alt="logo" src="logo.png" class="img-fluid img-logo" style="width: 2rem;">
-                <a class="navbar-brand" href="Home.html">Café Manga</a>
+                <a class="navbar-brand" href="Home.php">Café Manga</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBasic" aria-controls="navbarBasic" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
@@ -92,7 +92,7 @@ if (!$connect)
                             $result2 = mysqli_query($connect, $query2);
                             while($record2 = mysqli_fetch_assoc($result2)){
                                 echo '<div class="chapter-line">
-                                        <a href="mangainfo.php?varname='.$record2['chap_id'].'" class="chapter-num">
+                                        <a href="mangareader.php?varname='.$record2['chap_id'].'" class="chapter-num">
                                             <h5>Chapter '.$record2['chap_no'].' - '.$record2['chapter_title'].'</h5>
                                         </a>
                                       </div>';

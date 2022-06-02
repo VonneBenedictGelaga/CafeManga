@@ -1,6 +1,6 @@
 <?php
 
-$connect = mysqli_connect('localhost', 'root', '', 'mangaecafe_login');
+$connect = mysqli_connect('localhost', 'root', '', 'manga');
 
 if (!$connect) 
 {
@@ -29,7 +29,7 @@ if (!$connect)
         <nav class="navbar navbar-expand-xl navbar-light ">
             <div class="container-fluid">
                 <img alt="logo" src="logo.png" class="img-fluid img-logo" style="width: 2rem;">
-                <a class="navbar-brand" href="Home.html">Café Manga</a>
+                <a class="navbar-brand" href="Home.php">Café Manga</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBasic" aria-controls="navbarBasic" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
