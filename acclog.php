@@ -21,6 +21,4 @@
       mysqli_query($dbconn,$sql) or die(mysqli_error($dbconn));
     }
   }
-
-
 ?>
