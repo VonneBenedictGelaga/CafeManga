@@ -106,7 +106,7 @@ if (!$connect)
                             echo 'Error Message: ' . mysqli_error($connect) . '<br>';
                             exit;
                         }
-                        $record = mysqli_fetch_assoc($result);
+
 
                         $nextchapid = $record2['chap_id'] + 1;
                         $nextchapno = $record2['chap_no'] + 1;
