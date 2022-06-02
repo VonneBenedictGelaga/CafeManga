@@ -111,10 +111,11 @@ if (!$connect)
                     while ($record = mysqli_fetch_assoc($result)){
                         echo '<div class="col-lg-3 col-md-4 col-sm-6 manga">
                                 <img src="'.$record['cover'].'"alt="'.$record['title'].'-cover">
-                                <a href=""></a>
                                 <h5>'.$record['title'].'</h5>
                             </div>';
                     }
+
+                    
 
                     ?>        
 
