@@ -344,3 +344,49 @@ body{
   ::-webkit-scrollbar-thumb:hover {
     background: #8C4C17;
   }
+
+  
+
+  .fa-solid:hover
+  {
+    background-color: #fdfcf3;
+    border-radius: 50%;
+  }
+
+  .profile_dropdown
+  {
+    position: absolute;
+    padding: 0px 10px 0px 5px;
+    background-color: #6A2B05;
+    margin-left: -3%;
+    z-index: 100;
+    border-color: #3E1404;
+    border-style: solid;
+    border-radius: 10%;
+    overflow-x: hidden;
+    
+  }
+
+  .profile_dropdown a {
+    padding: 2px 2px 2px 5px;
+    text-decoration: none;
+    font-size: 100%;
+    color: #F99134;
+    display: block;
+    transition: 0.3s;
+    margin-left: 5px;
+  }
+
+  .profile_dropdown .closebtn {
+    top: -15px;
+    position: relative;
+    font-size: 36px;
+    margin-left: -5%;
+    padding-left: 5px;
+  }
+
+  .profile_dropdown .login, .profile_dropdown .signup{
+    position: relative;
+    top: -25px;
+    margin-left: 10px;
+  }

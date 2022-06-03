@@ -47,7 +47,16 @@ if (!$connect)
                             </span>
                         </div>
                     </form>
-                    <i class="fa-solid fa-circle-user user-logo"><a href="#" class="user-profile"></a></i>
+
+                    <!-- Profile Button -->
+                    <div class="profile">
+                        <li class="fa-solid fa-circle-user user-logo" onclick="openNav()"></li>
+                        <div class="profile_dropdown" id="profile-drop">
+                            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                            <a href="#" class="login">Login</a>
+                            <a href="#" class="signup">Signup</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -129,5 +138,17 @@ if (!$connect)
 
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script>
+            /* Open the sidenav */
+            document.getElementById("profile-drop").style.display = "none";
+            function openNav() {
+                document.getElementById("profile-drop").style.display = "block";
+            }
+
+            /* Close/hide the sidenav */
+            function closeNav() {
+                document.getElementById("profile-drop").style.display = "none";
+            }
+        </script>
     </body>
 </html>
