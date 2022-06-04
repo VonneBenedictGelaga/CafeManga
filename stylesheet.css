@@ -74,7 +74,9 @@ body{
 }
 
 
-
+.manga-title-home{
+    text-decoration: none;
+}
 
 /* NAV BAR CSS END */
 

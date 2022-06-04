@@ -36,7 +36,7 @@ if (!$connect)
                 <div class="collapse navbar-collapse show" id="navbarBasic">
                     <ul class="navbar-nav me-auto mb-2 mb-xl-0" >
                         <li class="nav-item nav-btn">
-                            <a class="nav-link" href="#">Categories</a>
+                            <a class="nav-link" href="a-z.php">A - Z</a>
                         </li>
                     </ul>
                     <form class="d-flex">

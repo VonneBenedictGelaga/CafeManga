@@ -37,7 +37,7 @@ if (!$connect)
                 <div class="collapse navbar-collapse show" id="navbarBasic">
                     <ul class="navbar-nav me-auto mb-2 mb-xl-0" >
                         <li class="nav-item nav-btn">
-                            <a class="nav-link" href="a-z.php">A - Z</a>
+                            <a class="nav-link" href="#">A - Z</a>
                         </li>
                     </ul>
                     <form class="d-flex">
@@ -64,71 +64,37 @@ if (!$connect)
 
 
         <div class="container-xl big-area ">
-            <div>
-                <div id="carouselDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img src="sampleImg/SL-CAR.png" class="d-block w-100" alt="Slide 1">
-                        <!-- <div class="carousel-caption d-none d-sm-block">
-                            <h5 class="manga-title-car">Solo Leveling</h5>
-                        </div> -->
-                      </div>
-                      <div class="carousel-item">
-                        <img src="sampleImg/LOVEISWAR-CAR.png" class="d-block w-100" alt="Slide 2">
-                        <!-- <div class="carousel-caption d-none d-sm-block">
-                            <h5 class="manga-title-car">Kaguya-sama Love is War</h5>
-                        </div> -->
-                      </div>
-                      <div class="carousel-item">
-                        <img src="sampleImg/COTE-CAR.png" class="d-block w-100" alt="Slide 3">
-                        <!-- <div class="carousel-caption d-none d-sm-block">
-                          <h5 class="manga-title-car">Classroom of the Elite</h5>
-                        </div> -->
-                      </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselDark" role="button" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselDark" role="button" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </a>
-                  </div>
-            </div> 
             <div class="container manga-area">
-                <h2 class="chapter-title">Trending</h2>
-                <div class="row ">
-                    <!-- <div class="col-lg-3 col-md-4 col-sm-6 manga">
-                        <img src="sampleImg/mangasamplecover.jpg" alt="manga-cover">
-                        <h5>TITLE</h5>
-                    </div> -->
-                    <?php
+                <h2 class="chapter-title">Manga A - Z:</h2>
+                    <div class="row ">
+                        <!-- <div class="col-lg-3 col-md-4 col-sm-6 manga">
+                            <img src="sampleImg/mangasamplecover.jpg" alt="manga-cover">
+                            <h5>TITLE</h5>
+                        </div> -->
+                        <?php
 
-                        $query = 'SELECT manga_id, title, cover
-                        FROM manga
-                        ORDER BY manga_id';
+                            $query = 'SELECT manga_id, title, cover
+                            FROM manga
+                            ORDER BY title';
 
-                        $result = mysqli_query($connect, $query);
+                            $result = mysqli_query($connect, $query);
 
-                        if (!$result){
-                            echo 'Error Message: ' . mysqli_error($connect) . '<br>';
-                            exit;
-                        }
-
-                        while ($record = mysqli_fetch_assoc($result)){
-                            echo '<div class="col-lg-3 col-md-4 col-sm-6 manga">
-                                    <a href="mangainfo.php?varname='.$record['manga_id'].'">
-                                        <div class="manga">
-                                            <img src="'.$record['cover'].'"alt="'.$record['title'].'-cover">
-                                            <h5 class="manga-title-home">'.$record['title'].'</h5>
-                                        </div>
-                                    </a>
-                                  </div>';
-                        }
-
-                    ?>
-                </div>
+                            if (!$result){
+                                echo 'Error Message: ' . mysqli_error($connect) . '<br>';
+                                exit;
+                            }
+                            while ($record = mysqli_fetch_assoc($result)){
+                                echo '<div class="col-lg-3 col-md-4 col-sm-6 manga">
+                                        <a href="mangainfo.php?varname='.$record['manga_id'].'">
+                                            <div class="manga">
+                                                <img src="'.$record['cover'].'"alt="'.$record['title'].'-cover">
+                                                <h5 class="manga-title-home">'.$record['title'].'</h5>
+                                            </div>
+                                        </a>
+                                      </div>';
+                            }
+                        ?>
+                    </div>
             </div>
         </div>
         
