@@ -12,7 +12,7 @@
     <form method="post">
       <div class="popup" id="popup-1">
          <div class="content">
-          <!--<div class="close-btn" onclick="togglePopup()">×</div>-->
+          <div class="close-btn" onclick="togglePopup()">×</div>
 
           <h1 style="color: white">Sign in</h1>
           <div class="input-field"><input type="test" id="email" placeholder="User Name" class="validate" name="userName" required></div>
