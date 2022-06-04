@@ -17,6 +17,7 @@ if (!$connect)
         <meta charset="utf-8">
         <title></title>
         <link rel="stylesheet" href="stylesheet.css">
+        <link href="popup.css" rel="stylesheet">
         <!-- Font  -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,8 +54,7 @@ if (!$connect)
                         <li class="fa-solid fa-circle-user user-logo" onclick="openNav()"></li>
                         <div class="profile_dropdown" id="profile-drop">
                             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                            <a href="#" class="login">Login</a>
-                            <a href="#" class="signup">Signup</a>
+                            <a onclick="togglePopup()" class="login">Login</a>
                         </div>
                     </div>
                 </div>
@@ -104,39 +104,57 @@ if (!$connect)
                     </div> -->
                     <?php
 
-                    $query = 'SELECT manga_id, title, cover
-                    FROM manga
-                    ORDER BY title';
+                        $query = 'SELECT manga_id, title, cover
+                        FROM manga
+                        ORDER BY title';
 
-                    $result = mysqli_query($connect, $query);
+                        $result = mysqli_query($connect, $query);
 
-                    if (!$result){
-                        echo 'Error Message: ' . mysqli_error($connect) . '<br>';
-                        exit;
-                    }
+                        if (!$result){
+                            echo 'Error Message: ' . mysqli_error($connect) . '<br>';
+                            exit;
+                        }
 
-                    echo '<p>The query found ' . mysqli_num_rows($result) . ' rows:</p>';
+                        echo '<p>The query found ' . mysqli_num_rows($result) . ' rows:</p>';
 
-                    while ($record = mysqli_fetch_assoc($result)){
-                        echo '<div class="col-lg-3 col-md-4 col-sm-6 manga" href="mangainfo.php?varname='.$record['manga_id'].'">
-                                    <img src="'.$record['cover'].'"alt="'.$record['title'].'-cover">
-                                     <a href="mangainfo.php?varname='.$record['manga_id'].'"><h5>'.$record['title'].'</h5></a>
-                            </div>';
-                    }
+                        while ($record = mysqli_fetch_assoc($result)){
+                            echo '<div class="col-lg-3 col-md-4 col-sm-6 manga" href="mangainfo.php?varname='.$record['manga_id'].'">
+                                        <img src="'.$record['cover'].'"alt="'.$record['title'].'-cover">
+                                            <a href="mangainfo.php?varname='.$record['manga_id'].'"><h5>'.$record['title'].'</h5></a>
+                                </div>';
+                        }
 
-
-
-                    ?>        
-
-
+                    ?>
                 </div>
             </div>
-            
         </div>
+        
+        <!-- POPUP LOGIN FORM -->              
+        <form method="post">
 
+            <div class="popup" id="popup-1">
 
+                <div class="content">
 
+                    <div class="close-btn" onclick="togglePopup()">×</div>
+                    <h1 style="color: white">Sign in</h1>
+                    <div class="input-field"><input type="test" id="email" placeholder="User Name" class="validate" name="userName" required></div>
+                    <div class="input-field"><input type="password" id="password" placeholder="Password" class="validate" name="accPass"></div>
+                    <button class="second-button" type="submit" name="submit">Sign in</button>
+                    <p>Don't have an account? <a href="registration.php">Sign Up</a></p>
+                </div>
+            </div>
+        </form>
 
+        <?php
+            include 'acclog.php';
+            $crude = new acclog();
+            if(isset($_POST['submit'])){
+            $crude->login($_POST['userName'],$_POST['accPass']);
+            }
+        ?>
+        
+        
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <script>
             /* Open the sidenav */
@@ -148,6 +166,12 @@ if (!$connect)
             /* Close/hide the sidenav */
             function closeNav() {
                 document.getElementById("profile-drop").style.display = "none";
+            }
+
+            //Popup Toggle
+            function togglePopup() {
+                document.getElementById("popup-1")
+                .classList.toggle("active");
             }
         </script>
     </body>

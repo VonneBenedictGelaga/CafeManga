@@ -4,7 +4,7 @@
     public $log;
 
     function __construct(){
-      $this->log = new mysqli("localhost","root","","mangaecafe_login");
+      $this->log = new mysqli("localhost","root","","manga");
 
       if($this->log){
         echo "Connected to Database!";
