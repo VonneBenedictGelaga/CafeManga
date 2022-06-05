@@ -349,6 +349,8 @@ body{
 
   
 
+ /* FOR PROFILE */
+
   .fa-solid:hover
   {
     background-color: #fdfcf3;
@@ -392,3 +394,4 @@ body{
     top: -25px;
     margin-left: 10px;
   }
+
