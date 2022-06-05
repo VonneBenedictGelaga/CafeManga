@@ -56,12 +56,8 @@ document.addEventListener("scroll", () => {
 
 /* Open the dropdown */
 function openNav() {
-    document.getElementById("profile-drop").style.display = "block";
-}
-
-/* Close/hide the dropdown */
-function closeNav() {
-    document.getElementById("profile-drop").style.display = "none";
+  var content = document.getElementById("profile-drop");
+  content.classList.toggle("show");
 }
 
 //Popup Toggle

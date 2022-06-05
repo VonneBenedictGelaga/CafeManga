@@ -360,6 +360,8 @@ body{
   .profile_dropdown
   {
     position: absolute;
+    height: 50px;
+    width: 100px;
     padding: 0px 10px 0px 5px;
     background-color: #6A2B05;
     margin-left: -3%;
@@ -369,33 +371,25 @@ body{
     border-radius: 10%;
     overflow-x: hidden;
     display: none;
+    text-align: center;
   }
 
   .profile_dropdown a {
-    padding: 2px 2px 2px 5px;
     text-decoration: none;
     font-size: 100%;
     color: #F99134;
     display: block;
     transition: 0.3s;
-    margin-left: 5px;
   }
 
-  .profile_dropdown .closebtn {
-    top: -15px;
+  .profile_dropdown .login{
     position: relative;
-    font-size: 36px;
-    margin-left: -5%;
-    padding-left: 5px;
+    top: 10px;
   }
 
-  .profile_dropdown .login, .profile_dropdown .signup{
-    position: relative;
-    top: -25px;
-    margin-left: 10px;
+  .show{
+    display: block;
   }
-
-
 
 /* Style for Search Bar */
 

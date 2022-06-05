@@ -76,7 +76,6 @@ if (!$connect)
                     <div class="profile">
                         <li class="fa-solid fa-circle-user user-logo" onclick="openNav()"></li>
                         <div class="profile_dropdown" id="profile-drop">
-                            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                             <a onclick="togglePopup()" class="login">Login</a>
                         </div>
                     </div>
@@ -179,8 +178,6 @@ if (!$connect)
             $crude->login($_POST['userName'],$_POST['accPass']);
             }
         ?>
-        
-        
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     </body>
 </html>

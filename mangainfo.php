@@ -17,6 +17,7 @@ if (!$connect)
         <meta charset="utf-8">
         <title></title>
         <link rel="stylesheet" href="stylesheet.css">
+        <link href="popup.css" rel="stylesheet">
         <!-- Font  -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,6 +34,7 @@ if (!$connect)
                 $("#search").autocomplete("search.php");
             });
         </script>
+        <script type="text/javascript" src="main.js"></script>
     </head>
     <body>
         <nav class="navbar navbar-expand-xl navbar-light ">
@@ -61,7 +63,6 @@ if (!$connect)
                     <div class="profile">
                         <li class="fa-solid fa-circle-user user-logo" onclick="openNav()"></li>
                         <div class="profile_dropdown" id="profile-drop">
-                            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                             <a onclick="togglePopup()" class="login">Login</a>
                         </div>
                     </div>
@@ -119,9 +120,31 @@ if (!$connect)
             </div>
         </div>
 
+        <!-- POPUP LOGIN FORM -->              
+        <form method="post">
 
+            <div class="popup" id="popup-1">
 
+                <div class="content">
 
+                    <div class="close-btn" onclick="togglePopup()">×</div>
+                    <h1 style="color: white">Sign in</h1>
+                    <div class="input-field"><input type="test" id="email" placeholder="User Name" class="validate" name="userName" required></div>
+                    <div class="input-field"><input type="password" id="password" placeholder="Password" class="validate" name="accPass"></div>
+                    <button class="second-button" type="submit" name="submit">Sign in</button>
+                    <p>Don't have an account? <a href="registration.php">Sign Up</a></p>
+                </div>
+            </div>
+        </form>
+
+        <?php
+            include 'acclog.php';
+            $crude = new acclog();
+            if(isset($_POST['submit'])){
+            $crude->login($_POST['userName'],$_POST['accPass']);
+            }
+        ?>
+        
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     </body>
 </html>
