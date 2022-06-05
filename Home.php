@@ -25,7 +25,21 @@ if (!$connect)
         <!-- icons -->
         <script src="https://kit.fontawesome.com/0cfc5249e3.js" crossorigin="anonymous"></script>
         <!-- bootstrap -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">    </head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <!-- jquery -->
+        <script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="jquery.autocomplete.js"></script>
+        <script>
+            // Auto Complete Search Bar
+            jQuery(function(){ 
+                $("#search").autocomplete("search.php");
+            });
+        </script>
+        <script type="text/javascript" src="main.js"></script>
+    </head>
+
+
+
     <body>
         <nav class="navbar navbar-expand-xl navbar-light ">
             <div class="container-fluid">
@@ -40,14 +54,23 @@ if (!$connect)
                             <a class="nav-link" href="a-z.php">A - Z</a>
                         </li>
                     </ul>
-                    <form class="d-flex">
+                    <!-- <form class="d-flex">
                         <div class="input-group">
                             <input type="search" class="form-control input-search" aria-label="Search">
                             <span class="input-group-btn">
                                 <button class="btn btn-search" type="button"><i class="glyphicon glyphicon-search"></i></button>
                             </span>
                         </div>
-                    </form>
+                    </form> -->
+
+                    <!-- Search Bar -->
+                    <div class="search_input">
+                        <form action="">
+                            <input type="text" name="q" id="search" placeholder="Type to search..">
+                            <div class="icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                        </form>
+                    </div>
+
 
                     <!-- Profile Button -->
                     <div class="profile">
@@ -159,23 +182,5 @@ if (!$connect)
         
         
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        <script>
-            /* Open the sidenav */
-            document.getElementById("profile-drop").style.display = "none";
-            function openNav() {
-                document.getElementById("profile-drop").style.display = "block";
-            }
-
-            /* Close/hide the sidenav */
-            function closeNav() {
-                document.getElementById("profile-drop").style.display = "none";
-            }
-
-            //Popup Toggle
-            function togglePopup() {
-                document.getElementById("popup-1")
-                .classList.toggle("active");
-            }
-        </script>
     </body>
 </html>

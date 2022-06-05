@@ -25,7 +25,17 @@ if (!$connect)
         <!-- icons -->
         <script src="https://kit.fontawesome.com/0cfc5249e3.js" crossorigin="anonymous"></script>
         <!-- bootstrap -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">    </head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="jquery.autocomplete.js"></script>
+        <script>
+            // Auto Complete Search Bar
+            jQuery(function(){ 
+                $("#search").autocomplete("search.php");
+            });
+        </script>
+        <script type="text/javascript" src="main.js"></script>
+    </head>
     <body>
         <nav class="navbar navbar-expand-xl navbar-light ">
             <div class="container-fluid">
@@ -37,17 +47,18 @@ if (!$connect)
                 <div class="collapse navbar-collapse show" id="navbarBasic">
                     <ul class="navbar-nav me-auto mb-2 mb-xl-0" >
                         <li class="nav-item nav-btn">
-                            <a class="nav-link" href="#">A - Z</a>
+                            <a class="nav-link" href="#" style="background-color: #2e0d01;">A - Z</a>
                         </li>
                     </ul>
-                    <form class="d-flex">
-                        <div class="input-group">
-                            <input type="search" class="form-control input-search" aria-label="Search">
-                            <span class="input-group-btn">
-                                <button class="btn btn-search" type="button"><i class="glyphicon glyphicon-search"></i></button>
-                            </span>
-                        </div>
-                    </form>
+
+                    <!-- Search Bar -->
+                    <div class="search_input">
+                        <form action="">
+                            <input type="text" name="q" id="search" placeholder="Type to search..">
+                            <div class="icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                        </form>
+                    </div>
+
 
                     <!-- Profile Button -->
                     <div class="profile">

@@ -49,3 +49,23 @@ document.addEventListener("scroll", () => {
 
 
 // BACK TO TOP BUTTON END___________________________
+
+
+// FOR LOGIN DROPDOWN
+
+
+/* Open the dropdown */
+function openNav() {
+    document.getElementById("profile-drop").style.display = "block";
+}
+
+/* Close/hide the dropdown */
+function closeNav() {
+    document.getElementById("profile-drop").style.display = "none";
+}
+
+//Popup Toggle
+function togglePopup() {
+    document.getElementById("popup-1")
+    .classList.toggle("active");
+}

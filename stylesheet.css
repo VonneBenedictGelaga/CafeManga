@@ -368,7 +368,7 @@ body{
     border-style: solid;
     border-radius: 10%;
     overflow-x: hidden;
-    
+    display: none;
   }
 
   .profile_dropdown a {
@@ -395,3 +395,100 @@ body{
     margin-left: 10px;
   }
 
+
+
+/* Style for Search Bar */
+
+.ac_results {
+	padding: 0px;
+	border: 1px solid #6A2B05;
+	background-color: #6A2B05;
+	overflow: hidden;
+}
+
+.ac_results ul {
+	width: 100%;
+	list-style-position: outside;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.ac_results li {
+	margin: 0px;
+	padding: 2px 5px;
+	cursor: default;
+	display: block;
+	color: #fff;
+	font-family:verdana;
+	/* 
+	if width will be 100% horizontal scrollbar will apear 
+	when scroll mode will be used
+	*/
+	/*width: 100%;*/
+	font-size: 12px;
+	/* 
+	it is very important, if line-height not setted or setted 
+	in relative units scroll will be broken in firefox
+	*/
+	line-height: 16px;
+	overflow: hidden;
+
+}
+
+.ac_loading {
+	background: white url('../images/indicator.gif') right center no-repeat;
+}
+
+.ac_odd {
+	background-color: #6A2B05;
+	color: #ffffff;
+}
+
+.ac_over {
+	background-color: #BB6B24;
+	color: #ffffff;
+}
+
+.input_text{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	border:1px solid #84a10b;
+	padding:2px;
+	width:150px;
+	color:#000;
+	background:white url(../images/search.png) no-repeat 3px 2px;
+	padding-left:17px;
+}
+
+
+.search_input{
+    position: relative;
+    height:auto;
+    width: auto;
+    margin-right: 25px;
+}
+
+.search_input input{
+    background-color: #F99134;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    padding: 0 60px 0 20px;
+}
+
+.search_input .icon{
+    position: absolute;
+    top: 0;
+    right: 0;
+    line-height: auto;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    color: #6A2B05;
+    cursor: pointer;
+}
+
+::placeholder { /* Microsoft Edge */
+    color: #562612;
+  }
