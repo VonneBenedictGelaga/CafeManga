@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Coming Soon Page</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <link href="images/prismlogo.png" type="image" rel="shortcut icon">
+
+   <link href="css/comingsoon.css" rel="stylesheet">
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Zen+Dots&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header>
+        <video autoplay muted loop id="vinylVideo"><source src="video/chillanime.mp4" type="video/mp4"></video>
+        <div class="hero">
+           <p>Building This Page</p>
+           <div class="glitch">
+		       <h1><span aria-hidden="true">Coming Soon</span>Coming Soon<span aria-hidden="true">Coming Soon</span>
+		       </h1>
+           </div>
+		   <hr>
+              <p id="launch"></p>
+
+           <section style="text-align: center; justify-content: center;">
+                <a class="back" href="home.html">Back To Home Page</a>
+           </section>
+
+        </div>
+
+	</header>
+
+</body>
+  <!--Countdown for Page-->
+<script>
+    var count = new Date("July 1,2022 00:00:00").getTime();
+    var x = setInterval(function () {
+      var now = new Date().getTime();
+      var distance = count - now;
+
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      document.getElementById("launch").innerHTML =
+        days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("launch").innerHTML = "Expired";
+      }
+    }, 1000);
+  </script>
+
+</html>
