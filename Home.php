@@ -8,7 +8,7 @@ if (!$connect)
     echo 'Error Message: ' . mysqli_connect_error() . '<br>';
     exit;
 }
-
+include 'acclog.php';
 ?>
 
 <!DOCTYPE html>
@@ -65,10 +65,26 @@ if (!$connect)
 
                     <!-- Search Bar -->
                     <div class="search_input">
-                        <form action="">
-                            <input type="text" name="q" id="search" placeholder="Type to search..">
-                            <div class="icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                        <form action="" method="get">
+                            <input type="text" name="q" id="search" placeholder="Type to search.." >
+                            <?php
+                                if(!empty($_GET['q'])){
+                                    $id = $_GET['q'];
+                                    // $new_str = str_replace('+', ' ', $id);
+                                    $titleQuery = "SELECT manga_id FROM manga WHERE title = '".$id."'";
+                                    $result2 = mysqli_query($connect, $titleQuery);
+                                    $result = mysqli_fetch_assoc($result2);
+                                    echo '<div class="icon" name="submit"><a href="mangainfo.php?varname='.$result['manga_id'].'"><i class="fa-solid fa-magnifying-glass"></i></a></div>';
+                                }
+
+                                
+                                // echo '$result2';
+                                
+                                
+                            ?>
+                            <!-- <div class="icon" name="submit"><a href="mangainfo.php?varname=1"><i class="fa-solid fa-magnifying-glass"></i></a></div> --> 
                         </form>
+
                     </div>
 
 
@@ -172,7 +188,6 @@ if (!$connect)
         </form>
 
         <?php
-            include 'acclog.php';
             $crude = new acclog();
             if(isset($_POST['submit'])){
             $crude->login($_POST['userName'],$_POST['accPass']);

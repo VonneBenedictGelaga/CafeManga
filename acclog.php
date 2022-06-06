@@ -6,9 +6,7 @@
     function __construct(){
       $this->log = new mysqli("localhost","root","","manga");
 
-      if($this->log){
-        echo "Connected to Database!";
-      }else{
+      if(!$this->log){
         mysqli_connect_error();
       }
 
@@ -31,5 +29,16 @@
         exit();
       }
     }
+
+    // public function findManga($title){
+    //   $titleQuery = "SELECT manga_id FROM manga WHERE title = '%" .$title. "%'";
+    //   $dbconn2 = $this->log;
+    //   $result2 = mysqli_query($dbconn2,$titleQuery);
+    //   if(!empty($result2)){
+    //     return $result2;
+    //   } else {
+    //     return false;
+    //   }
+    // }
   }
 ?>
