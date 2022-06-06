@@ -12,7 +12,7 @@ html {
   /*Image only BG fallback*/
   
   /*background = gradient + image pattern combo*/
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(homeimage/bgregistration.png);;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(homeimage/cafemanga.png);;
 }
 
 body {
@@ -26,7 +26,7 @@ body {
   position: relative;
 }
 #msform fieldset {
-  background: white;
+  background: #BB6B24;
   border: 0 none;
   border-radius: 3px;
   box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
@@ -46,19 +46,20 @@ body {
 /*inputs*/
 #msform input, #msform textarea {
   padding: 15px;
+  background-color: #FFD59A;
   border: 1px solid #ccc;
   border-radius: 3px;
   margin-bottom: 10px;
   width: 100%;
   box-sizing: border-box;
   font-family: Ubuntu;
-  color: #2C3E50;
+  color: #3E1404 ;
   font-size: 13px;
 }
 /*buttons*/
 #msform .action-button {
   width: 100px;
-  background: #e81750;
+  background: #3E1404;
   font-weight: bold;
   color: white;
   border: 0 none;
@@ -78,7 +79,7 @@ body {
   font-size: 15px;
   font-family: monsterat;
   text-transform: uppercase;
-  color: #2C3E50;
+  color: #3E1404;
   margin-bottom: 10px;
 }
 .fs-subtitle {
@@ -91,6 +92,8 @@ body {
 #progressbar {
   margin-bottom: 30px;
   overflow: hidden;
+  align-content: center;
+
   /*CSS counters to number the steps*/
   counter-reset: step;
 }
@@ -102,6 +105,7 @@ body {
   font-family: zen dots;
   width: 33.33%;
   float: left;
+  left: 30%;
   position: relative;
 }
 #progressbar li:before {
@@ -134,8 +138,7 @@ body {
 /*marking active/completed steps green*/
 /*The number of the step and the connector before it = green*/
 #progressbar li.active:before,  #progressbar li.active:after{
-  background: linear-gradient(to top, #008aff, #00ffe7);
-  animation: animate 5s linear infinite;;
+  background: #8C4C17;
   color: white;
 }
 
