@@ -45,6 +45,7 @@ if(!empty($_POST['accEmail'])){
 	$passAcc=$_POST['accPass'];
 
 	$crude->insert($emailAcc,$nameUser,$passAcc);
+  header("Location: Home.php"); exit();
 }
 	//echo "Did not Connect";
 //}
@@ -58,6 +59,8 @@ if(!empty($_POST['accEmail'])){
 		alert("Thank You for Signing Up!");
 
 	}
+
+
 </script>
 
 

@@ -54,39 +54,24 @@ include 'acclog.php';
                             <a class="nav-link" href="a-z.php">A - Z</a>
                         </li>
                     </ul>
-                    <!-- <form class="d-flex">
-                        <div class="input-group">
-                            <input type="search" class="form-control input-search" aria-label="Search">
-                            <span class="input-group-btn">
-                                <button class="btn btn-search" type="button"><i class="glyphicon glyphicon-search"></i></button>
-                            </span>
-                        </div>
-                    </form> -->
 
                     <!-- Search Bar -->
                     <div class="search_input">
-                        <form action="" method="get">
-                            <input type="text" name="q" id="search" placeholder="Type to search.." >
+                        <form action="Home.php" method="get">
+                            <input type="text" name="q" id="search" placeholder="Type to search..">
                             <?php
                                 if(!empty($_GET['q'])){
                                     $id = $_GET['q'];
-                                    // $new_str = str_replace('+', ' ', $id);
                                     $titleQuery = "SELECT manga_id FROM manga WHERE title = '".$id."'";
                                     $result2 = mysqli_query($connect, $titleQuery);
                                     $result = mysqli_fetch_assoc($result2);
-                                    echo '<div class="icon" name="submit"><a href="mangainfo.php?varname='.$result['manga_id'].'"><i class="fa-solid fa-magnifying-glass"></i></a></div>';
+
+                                    $test =  "Location: mangainfo.php?varname='".$result['manga_id']."'";
+                                    header($test); exit();
                                 }
-
-                                
-                                // echo '$result2';
-                                
-                                
                             ?>
-                            <!-- <div class="icon" name="submit"><a href="mangainfo.php?varname=1"><i class="fa-solid fa-magnifying-glass"></i></a></div> --> 
                         </form>
-
                     </div>
-
 
                     <!-- Profile Button -->
                     <div class="profile">
@@ -98,8 +83,6 @@ include 'acclog.php';
                 </div>
             </div>
         </nav>
-
-
 
         <div class="container-xl big-area ">
             <div>

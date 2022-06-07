@@ -53,9 +53,19 @@ if (!$connect)
 
                     <!-- Search Bar -->
                     <div class="search_input">
-                        <form action="">
+                        <form action="Home.php" method="get">
                             <input type="text" name="q" id="search" placeholder="Type to search..">
-                            <div class="icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                            <?php
+                                if(!empty($_GET['q'])){
+                                    $id = $_GET['q'];
+                                    $titleQuery = "SELECT manga_id FROM manga WHERE title = '".$id."'";
+                                    $result2 = mysqli_query($connect, $titleQuery);
+                                    $result = mysqli_fetch_assoc($result2);
+
+                                    $test =  "Location: mangainfo.php?varname='".$result['manga_id']."'";
+                                    header($test); exit();
+                                }
+                            ?>
                         </form>
                     </div>
 

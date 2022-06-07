@@ -8,7 +8,7 @@ if (!$connect)
     echo 'Error Message: ' . mysqli_connect_error() . '<br>';
     exit;
 }
-
+include 'acclog.php'
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +24,18 @@ if (!$connect)
         <!-- icons -->
         <script src="https://kit.fontawesome.com/0cfc5249e3.js" crossorigin="anonymous"></script>
         <!-- bootstrap -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">    </head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <!-- jquery -->
+        <script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="jquery.autocomplete.js"></script>
+        <script>
+            // Auto Complete Search Bar
+            jQuery(function(){ 
+                $("#search").autocomplete("search.php");
+            });
+        </script>
+        <script type="text/javascript" src="main.js"></script>
+    </head>
     <body>
         <nav class="navbar navbar-expand-xl navbar-light ">
             <div class="container-fluid">
@@ -39,15 +50,24 @@ if (!$connect)
                             <a class="nav-link" href="a-z.php">A - Z</a>
                         </li>
                     </ul>
-                    <form class="d-flex">
-                        <div class="input-group">
-                            <input type="search" class="form-control input-search" aria-label="Search">
-                            <span class="input-group-btn">
-                                <button class="btn btn-search" type="button"><i class="glyphicon glyphicon-search"></i></button>
-                            </span>
-                        </div>
-                    </form>
-                    <i class="fa-solid fa-circle-user user-logo"><a href="#" class="user-profile"></a></i>
+
+                    <!-- Search Bar -->
+                    <div class="search_input">
+                        <form action="Home.php" method="get">
+                            <input type="text" name="q" id="search" placeholder="Type to search..">
+                            <?php
+                                if(!empty($_GET['q'])){
+                                    $id = $_GET['q'];
+                                    $titleQuery = "SELECT manga_id FROM manga WHERE title = '".$id."'";
+                                    $result2 = mysqli_query($connect, $titleQuery);
+                                    $result = mysqli_fetch_assoc($result2);
+
+                                    $test =  "Location: mangainfo.php?varname='".$result['manga_id']."'";
+                                    header($test); exit();
+                                }
+                            ?>
+                        </form>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -133,9 +153,7 @@ if (!$connect)
                 </div>
                 <div class="manga-container container">
                     
-                    <?php
-                        echo '<p>The query found ' . mysqli_num_rows($result) . ' rows:</p>';
-    
+                    <?php    
                         while ($record = mysqli_fetch_assoc($result)){
                             echo '<img class="manga-img" src="'.$record['file_dir'].'" alt="'.$record['name'].'">';
                         }
@@ -162,8 +180,6 @@ if (!$connect)
                 </div>
             </div>
         </div>
-
-        <script src="main.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     </body>
 </html>
