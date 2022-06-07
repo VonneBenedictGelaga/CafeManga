@@ -3,16 +3,16 @@
 
 /*basic reset*/
 * {
-  margin: 0;
+  margin: 0; 
   padding: 0;
 }
 
 html {
   height: 100%;
   /*Image only BG fallback*/
-
+  
   /*background = gradient + image pattern combo*/
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(cafemanga.png);;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(homeimage/cafemanga.png);;
 }
 
 body {
@@ -34,7 +34,7 @@ body {
   box-sizing: border-box;
   width: 80%;
   margin: 0 10%;
-
+  
   /*stacking fieldsets above each other*/
   position: relative;
   align-content: center;
@@ -133,7 +133,7 @@ body {
 }
 #progressbar li:first-child:after {
   /*connector not needed before the first step*/
-  content: none;
+  content: none; 
 }
 /*marking active/completed steps green*/
 /*The number of the step and the connector before it = green*/
@@ -151,3 +151,4 @@ body {
     filter: hue-rotate(360deg);
   }
 }
+
