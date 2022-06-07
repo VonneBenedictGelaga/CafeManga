@@ -29,16 +29,5 @@
         exit();
       }
     }
-
-    // public function findManga($title){
-    //   $titleQuery = "SELECT manga_id FROM manga WHERE title = '%" .$title. "%'";
-    //   $dbconn2 = $this->log;
-    //   $result2 = mysqli_query($dbconn2,$titleQuery);
-    //   if(!empty($result2)){
-    //     return $result2;
-    //   } else {
-    //     return false;
-    //   }
-    // }
   }
 ?>

@@ -90,21 +90,12 @@ include 'acclog.php';
                     <div class="carousel-inner">
                       <div class="carousel-item active">
                         <img src="sampleImg/SL-CAR.png" class="d-block w-100" alt="Slide 1">
-                        <!-- <div class="carousel-caption d-none d-sm-block">
-                            <h5 class="manga-title-car">Solo Leveling</h5>
-                        </div> -->
                       </div>
                       <div class="carousel-item">
                         <img src="sampleImg/LOVEISWAR-CAR.png" class="d-block w-100" alt="Slide 2">
-                        <!-- <div class="carousel-caption d-none d-sm-block">
-                            <h5 class="manga-title-car">Kaguya-sama Love is War</h5>
-                        </div> -->
                       </div>
                       <div class="carousel-item">
                         <img src="sampleImg/COTE-CAR.png" class="d-block w-100" alt="Slide 3">
-                        <!-- <div class="carousel-caption d-none d-sm-block">
-                          <h5 class="manga-title-car">Classroom of the Elite</h5>
-                        </div> -->
                       </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselDark" role="button" data-bs-slide="prev">
@@ -120,10 +111,6 @@ include 'acclog.php';
             <div class="container manga-area">
                 <h2 class="chapter-title">Trending</h2>
                 <div class="row ">
-                    <!-- <div class="col-lg-3 col-md-4 col-sm-6 manga">
-                        <img src="sampleImg/mangasamplecover.jpg" alt="manga-cover">
-                        <h5>TITLE</h5>
-                    </div> -->
                     <?php
 
                         $query = 'SELECT manga_id, title, cover
